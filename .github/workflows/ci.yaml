@@ -1,0 +1,17 @@
+name: ci-node-workflow
+on: 
+  pull_request:
+    branches:
+      - main
+jobs:
+  check-application:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: yarn
+      - run: yarn test
+      - run: yarn start
+    

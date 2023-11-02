@@ -1,0 +1,17 @@
+{
+  "name": "full-cycle-desafio-ci",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "repository": "https://github.com/Luis-Miguel-BL/full-cycle-desafio-ci.git",
+  "author": "Luis <2001lmbl@gmail.com>",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "test": "jest --runInBand"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
