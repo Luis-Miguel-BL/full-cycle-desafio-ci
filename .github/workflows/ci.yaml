@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  check-application:
+  run-ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,4 +14,9 @@ jobs:
       - run: yarn
       - run: yarn test
       - run: yarn start
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     
